@@ -23,6 +23,6 @@ resource "azurerm_bastion_host" "bastion" {
 resource "azurerm_subnet" "bastion" {
   name                 = "AzureBastionSubnet"  # ✅ Must be exactly this name
   resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet1.name
+  virtual_network_name = azurerm_virtual_network.vnet[0].name
   address_prefixes     = ["10.0.2.0/27"]  # Use a small subnet range
 }

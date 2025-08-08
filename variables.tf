@@ -41,13 +41,10 @@ variable "subnet2_prefix" {
     default = "10.1.1.0/24"
 }
 
-variable "vm_count" {
-  default = 2
-}
 
 variable "bastion_name" {
     type = string
-    default = "bastion"
+    default = "lrn-bastion"
 }
 
 variable "subnet1_address_prefix" {
@@ -84,4 +81,30 @@ variable "vm_size" {
   type    = string
   default = "Standard_B2s"
   
+}
+
+variable "vm_count" {
+  description = "Number of virtual machines to create"
+  type        = number
+  default     = 2
+}
+
+variable "subscription_id" {
+  description = "The Azure subscription ID"
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "The Azure tenant ID"
+  type        = string
+}
+
+variable "client_id" {
+  description = "The Azure client ID"
+  type        = string
+}
+
+variable "client_secret" {
+  description = "The Azure client secret"
+  type        = string
 }
