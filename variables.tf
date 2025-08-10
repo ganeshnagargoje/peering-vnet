@@ -108,3 +108,9 @@ variable "client_secret" {
   description = "The Azure client secret"
   type        = string
 }
+
+variable "create_access_policy" {
+  description = "Whether to create access policy for the current user"
+  type        = bool
+  default     = true
+}

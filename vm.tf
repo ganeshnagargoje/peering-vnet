@@ -37,4 +37,10 @@ resource "azurerm_virtual_machine" "vm" {
       key_data = azurerm_key_vault_secret.ssh_public_key.value
     }
   }
+
+  # Ensure Key Vault secrets are created before VM creation
+  depends_on = [
+    azurerm_key_vault_secret.ssh_public_key,
+    azurerm_key_vault_access_policy.key_vault_access_policy
+  ]
 }

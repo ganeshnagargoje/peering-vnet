@@ -24,8 +24,10 @@ output "VMs" {
 
 output "ssh_public_key" {
   value = azurerm_key_vault_secret.ssh_public_key.value
+  sensitive = true
 }
 
 output "ssh_private_key" {
   value = azurerm_key_vault_secret.ssh_private_key.value
+  sensitive = true
 }
